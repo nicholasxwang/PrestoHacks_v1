@@ -12,11 +12,14 @@ def main_program(image):
 def get_image_name(image_url):
   browser.get("https://www.google.com/searchbyimage?site=search&sa=X&image_url="+image_url)
   time.sleep(5)
-  parsed = browser.find_elements_by_class_name("fKDtNb")[0]
+  try:
+    parsed = browser.find_elements_by_class_name("fKDtNb")[0]
+  except:
+    parsed = "No Results!"
   return parsed
 def find_music(query):
   #rishaan
-  return #something #RISHAAN CODE HERE literally only like 3 lines of code ://
-print(main_program("https://media.discordapp.net/attachments/905242375549509675/919289010122280980/IMG_2872.jpeg?width=1100&height=825"))
+  return f"https://www.musixmatch.com/{query}/tracks"
+print(main_program("https://media.discordapp.net/attachments/905242375549509675/919289010122280980/IMG_2872.jpeg"))
 
 #Permissions Fix: chmod +x geckodriver
