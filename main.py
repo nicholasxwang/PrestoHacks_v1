@@ -16,11 +16,12 @@ def main_program(image):
     return "Sorry, I could not find any song related to your picture. How about, try Head Up by The Score!"
   #Find Synonyms
   import nltk
+  nltk.download('wordnet')
   from nltk.corpus import wordnet
   synonyms = []
   antonyms = []
     
-  for syn in wordnet.synsets("good"):
+  for syn in wordnet.synsets(a):
       for l in syn.lemmas():
           synonyms.append(l.name())
           if l.antonyms():
@@ -38,7 +39,7 @@ def main_program(image):
   if len(songs) == 0:
     return "I found what your picture is thanks to my smart AI but I could not find any songs. How about, try AJR's Bang? Synonyms include "+str(synonyms)
   else:
-    return "Yay! The best result is "+str(songs[0])+"Our Synonym list include: " + str(synonyms)+"Other results include: "+str(songs[1:len(songs)])
+    return "Yay! The best result is \""+str(songs[0])+"\" \nOur Synonym list include: " + str(synonyms)+"\nOther results include: "+str(songs[1:len(songs)])
 
 def get_image_name(image_url):
   browser.get("https://www.google.com/searchbyimage?site=search&sa=X&image_url="+image_url)
@@ -52,7 +53,10 @@ def get_image_name(image_url):
 def find_music(query):
   browser.get(f"https://www.musixmatch.com/search/{query}/tracks")
   time.sleep(2)
-  a = browser.find_elements_by_class_name("title")[0].text
+  try:
+    a = browser.find_elements_by_class_name("title")[0].text
+  except:
+    return "n"
   return a
   
 link = input("put a link: ")

@@ -288,3 +288,46 @@ unwatchForTabs()@TargetList.jsm:70
 unwatchForTargets()@TargetList.jsm:37
 destructor()@TargetList.jsm:109
 close()@RemoteAgent.jsm:136
+1639251633856	geckodriver	INFO	Listening on 127.0.0.1:42359
+1639251633865	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "38181" "-no-remote" "-profile" "/tmp/rust_mozprofilehnRMQc"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639251634414	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehnRMQc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38181/devtools/browser/7aed9931-3323-443a-a490-0dbc7e7ca254
+1639251637310	Marionette	INFO	Listening on port 42955
+1639251637410	Marionette	WARN	TLS certificate errors will be ignored for this session
+1639251697453	geckodriver	INFO	Listening on 127.0.0.1:44533
+1639251697478	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "54685" "-no-remote" "-profile" "/tmp/rust_mozprofileqPVCFp"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639251698374	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqPVCFp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54685/devtools/browser/d3880dec-84bf-49c8-92fc-8f6969c91d0e
+1639251703311	Marionette	INFO	Listening on port 34989
+1639251703432	Marionette	WARN	TLS certificate errors will be ignored for this session
+1639251831758	geckodriver	INFO	Listening on 127.0.0.1:42989
+1639251831768	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "46021" "-no-remote" "-profile" "/tmp/rust_mozprofileHFQTiW"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639251832339	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHFQTiW/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:46021/devtools/browser/a1b1e64f-028d-4ee2-8656-b5c1147c9e4d
+1639251835178	Marionette	INFO	Listening on port 43419
+1639251835253	Marionette	WARN	TLS certificate errors will be ignored for this session
+!!! error running onStopped callback: TypeError: callback is not a function
+1639251959777	Marionette	INFO	Stopped listening on port 43419
+1639251959870	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: chrome://remote/content/cdp/observers/TargetObserver.jsm :: stop :: line 64"  data: no] Stack trace: stop()@TargetObserver.jsm:64
+unwatchForTabs()@TargetList.jsm:70
+unwatchForTargets()@TargetList.jsm:37
+destructor()@TargetList.jsm:109
+close()@RemoteAgent.jsm:136
+1639251960677	geckodriver	INFO	Listening on 127.0.0.1:53771
+1639251960712	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "54177" "-no-remote" "-profile" "/tmp/rust_mozprofilelCZ9L8"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639251961382	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilelCZ9L8/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54177/devtools/browser/0fd477d9-e6cd-4ce1-ac3b-fcdfa390d86a
+1639251963761	Marionette	INFO	Listening on port 46393
+1639251963880	Marionette	WARN	TLS certificate errors will be ignored for this session
