@@ -34,7 +34,8 @@ def main_program(image):
   synonyms = [a]+synonyms
   
   for i in synonyms:
-    songs.append(find_music(i))
+    if not(find_music(i)=="n"):
+      songs.append(find_music(i))
 
   if len(songs) == 0:
     return "I found what your picture is thanks to my smart AI but I could not find any songs. How about, try AJR's Bang? Synonyms include "+str(synonyms)
