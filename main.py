@@ -7,7 +7,7 @@ import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 start_time = time.time()
 options = Options()
-options.headless = True
+#options.headless = True
 browser = Firefox(executable_path="./geckodriver",options=options)
 
 ignore = [
@@ -22,7 +22,20 @@ ignore = [
   "linux",
   "linuxos",
   "profile",
-  "avatar"
+  "avatar",
+  "1k",
+  "2k",
+  "3k",
+  "4k",
+  "5k",
+  "6k",
+  "7k",
+  "8k",
+  "the",
+  "an",
+  "a",
+  "and",
+  "or"
 ]
 def main_program(image):
   a = str(get_image_name(image))
@@ -33,33 +46,35 @@ def main_program(image):
   word = a.split(" ")
   songs = []
   ignored = []
+  import nltk
+  nltk.download('wordnet')
+  from nltk.corpus import wordnet
   for i in word:
     if i.lower() in ignore:
       ignored.append(i.lower())
       continue
     #Find Synonyms
-    import nltk
-    nltk.download('wordnet')
-    from nltk.corpus import wordnet
     synonyms = []
     antonyms = []
       
-    for syn in wordnet.synsets(a):
+    for syn in wordnet.synsets(i):
         for l in syn.lemmas():
             synonyms.append(l.name())
             if l.antonyms():
                 antonyms.append(l.antonyms()[0].name())
       
+    for x in range(0,len(synonyms)):
+      synonyms[x] = synonyms[x].replace("_"," ")
     synonyms = set(synonyms)
     #Search for songs
     synonyms = list(synonyms)
-    synonyms = [a]+synonyms
+    synonyms = [i]+synonyms
     
-    for i in synonyms:
-      temp = find_music(i)
+    for j in synonyms:
+      temp = find_music(j)
       if not (temp=="n"):
-        for i in temp:
-          songs.append(i.text)
+        for j in temp:
+          songs.append(i)
 
   if len(songs) == 0:
     return "I found what your picture is thanks to my smart AI but I could not find any songs. How about, try AJR's Bang? Synonyms include "+str(synonyms)+"\n We ignored: "+ignored
