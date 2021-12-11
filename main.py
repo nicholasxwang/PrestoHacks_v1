@@ -29,35 +29,42 @@ def main_program(image):
   #Check if it exists
   if a == "n":
     return "Sorry, I could not find any song related to your picture. How about, try Head Up by The Score!"
-  #Find Synonyms
-  import nltk
-  nltk.download('wordnet')
-  from nltk.corpus import wordnet
-  synonyms = []
-  antonyms = []
-    
-  for syn in wordnet.synsets(a):
-      for l in syn.lemmas():
-          synonyms.append(l.name())
-          if l.antonyms():
-              antonyms.append(l.antonyms()[0].name())
-    
-  synonyms = set(synonyms)
-  #Search for songs
+  #split into words
+  word = a.split(" ")
   songs = []
-  synonyms = list(synonyms)
-  synonyms = [a]+synonyms
-  
-  for i in synonyms:
-    temp = find_music(i)
-    if not (temp=="n"):
-      for i in temp:
-        songs.append(i.text)
+  ignored = []
+  for i in word:
+    if i.lower() in ignore:
+      ignored.append(i.lower())
+      continue
+    #Find Synonyms
+    import nltk
+    nltk.download('wordnet')
+    from nltk.corpus import wordnet
+    synonyms = []
+    antonyms = []
+      
+    for syn in wordnet.synsets(a):
+        for l in syn.lemmas():
+            synonyms.append(l.name())
+            if l.antonyms():
+                antonyms.append(l.antonyms()[0].name())
+      
+    synonyms = set(synonyms)
+    #Search for songs
+    synonyms = list(synonyms)
+    synonyms = [a]+synonyms
+    
+    for i in synonyms:
+      temp = find_music(i)
+      if not (temp=="n"):
+        for i in temp:
+          songs.append(i.text)
 
   if len(songs) == 0:
-    return "I found what your picture is thanks to my smart AI but I could not find any songs. How about, try AJR's Bang? Synonyms include "+str(synonyms)
+    return "I found what your picture is thanks to my smart AI but I could not find any songs. How about, try AJR's Bang? Synonyms include "+str(synonyms)+"\n We ignored: "+ignored
   else:
-    return "Yay! The best result is \""+str(songs[0])+"\" \nOur Synonym list include: " + str(synonyms)+"\nOther results include: "+str(songs[1:len(songs)])
+    return "Yay! The best result is \""+str(songs[0])+"\" \nOur Synonym list include: " + str(synonyms)+"\nOther results include: "+str(songs[1:len(songs)])+"\n We ignored: "+ignored
 
 def get_image_name(image_url):
   browser.get("https://www.google.com/searchbyimage?site=search&sa=X&image_url="+image_url)
