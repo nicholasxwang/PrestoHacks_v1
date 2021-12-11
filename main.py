@@ -7,8 +7,23 @@ import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 start_time = time.time()
 options = Options()
+options.headless = True
 browser = Firefox(executable_path="./geckodriver",options=options)
 
+ignore = [
+  "wallpaper",
+  "picture",
+  "landscape",
+  "mac",
+  "macos",
+  "os",
+  "windows",
+  "windowsos",
+  "linux",
+  "linuxos",
+  "profile",
+  "avatar"
+]
 def main_program(image):
   a = str(get_image_name(image))
   #Check if it exists
@@ -34,8 +49,10 @@ def main_program(image):
   synonyms = [a]+synonyms
   
   for i in synonyms:
-    if not(find_music(i)=="n"):
-      songs.append(find_music(i))
+    temp = find_music(i)
+    if not (temp=="n"):
+      for i in temp:
+        songs.append(i.text)
 
   if len(songs) == 0:
     return "I found what your picture is thanks to my smart AI but I could not find any songs. How about, try AJR's Bang? Synonyms include "+str(synonyms)
@@ -55,7 +72,7 @@ def find_music(query):
   browser.get(f"https://www.musixmatch.com/search/{query}/tracks")
   time.sleep(2)
   try:
-    a = browser.find_elements_by_class_name("title")[0].text
+    a = browser.find_elements_by_class_name("title")
   except:
     return "n"
   return a
