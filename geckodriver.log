@@ -1,0 +1,9 @@
+1639247899199	geckodriver	INFO	Listening on 127.0.0.1:45253
+1639247899240	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "34717" "-no-remote" "-profile" "/tmp/rust_mozprofileLDOBKF"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639247902501	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileLDOBKF/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:34717/devtools/browser/ef0c008c-008e-4dcf-bb7e-e149e13fc547
+1639247906118	Marionette	INFO	Listening on port 37473
+1639247906191	Marionette	WARN	TLS certificate errors will be ignored for this session
