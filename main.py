@@ -12,7 +12,10 @@ def main_program(image):
   s = ""
   s+=str(a)
   s+="\n Best Match: "
-  b = str(find_music(a))
+  try:
+    b = str(find_music(a))
+  except:
+    b = "No Results :("
   s+=str(b)
   return s
 def get_image_name(image_url):

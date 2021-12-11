@@ -140,3 +140,23 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://localhost:55871/devtools/browser/3b39745a-7092-4a84-992c-4f70f17f5e64
 1639249185976	Marionette	INFO	Listening on port 45371
 1639249186061	Marionette	WARN	TLS certificate errors will be ignored for this session
+1639249258144	geckodriver	INFO	Listening on 127.0.0.1:53135
+1639249258170	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "46343" "-no-remote" "-profile" "/tmp/rust_mozprofilei5Nx72"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639249259024	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilei5Nx72/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:46343/devtools/browser/9a5241d2-66ab-437b-8de6-81cdce852386
+1639249261515	Marionette	INFO	Listening on port 46267
+1639249261644	Marionette	WARN	TLS certificate errors will be ignored for this session
+1639249316760	geckodriver	INFO	Listening on 127.0.0.1:52231
+1639249316777	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "38905" "-no-remote" "-profile" "/tmp/rust_mozprofileUy41jz"
+1639249319773	geckodriver	INFO	Listening on 127.0.0.1:48633
+1639249319789	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "51507" "-no-remote" "-profile" "/tmp/rust_mozprofile8oY5rZ"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639249320561	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8oY5rZ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51507/devtools/browser/833776a2-6185-47f5-bfca-dfd55e892ec0
+1639249323910	Marionette	INFO	Listening on port 34243
+1639249324009	Marionette	WARN	TLS certificate errors will be ignored for this session
